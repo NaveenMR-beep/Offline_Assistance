@@ -119,14 +119,14 @@ export default function App() {
   const addLog = (type, text) => {
     setConsoleLogs((prev) => [
       ...prev,
-      { id: Date.now(), type, text }
+      { id: `${Date.now()}-${Math.random()}`, type, text }
     ]);
   };
 
   // Add memory database record
   const addMemoryRecord = (app, topic, value) => {
     const newRecord = {
-      id: Date.now(),
+      id: `${Date.now()}-${Math.random()}`,
       app,
       topic,
       value,
