@@ -42,9 +42,9 @@ class AssistantAccessibilityService : AccessibilityService(), TextToSpeech.OnIni
         }
     }
 
-    override fun onAccessibilityEvent(event: AccessibilityEvent) {
+    override fun onAccessibilityEvent(event: AccessibilityEvent?) {
         // Track the current active app package
-        val packageName = event.packageName?.toString() ?: ""
+        val packageName = event?.packageName?.toString() ?: ""
         if (packageName.isNotEmpty() && !packageName.contains("com.example.offlineassistant")) {
             currentActivePackage = packageName
         }
@@ -57,7 +57,8 @@ class AssistantAccessibilityService : AccessibilityService(), TextToSpeech.OnIni
     }
 
     // Trigger Speech Recognition on hardware Volume Down key press
-    override fun onKeyEvent(event: KeyEvent): Boolean {
+    override fun onKeyEvent(event: KeyEvent?): Boolean {
+        if (event == null) return false
         val keyCode = event.keyCode
         val action = event.action
 
