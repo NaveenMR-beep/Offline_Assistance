@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Offline Assistant</string>
+    <string name="accessibility_service_label">Offline Assistant Service</string>
+    <string name="accessibility_service_description">Offline Phone Voice Assistant. Controls applications using on-device voice commands via accessibility tools.</string>
+</resources>
